@@ -16,7 +16,7 @@ $ mkdir build
 $ cd build
 $ cmake ..
 $ make
-$ ./main
+$ ./vk_internship
 ```
 
 ## Задание
