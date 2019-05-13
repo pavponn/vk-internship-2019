@@ -8,6 +8,7 @@
 #include <random>
 #include <unordered_set>
 
+IntersectionTest::IntersectionTest() : mAllPassed(true) {}
 
 bool IntersectionTest::runTests() {
     mAllPassed = emptyTests()
@@ -202,4 +203,3 @@ void IntersectionTest::printRunTestMessage(std::string const& testsName) {
 void IntersectionTest::printResultMessage(std::string const& result) {
     std::cout << "TESTS " << result << std::endl;
 }
-

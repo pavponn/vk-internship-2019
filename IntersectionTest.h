@@ -10,7 +10,7 @@
 
 class IntersectionTest {
 public:
-    IntersectionTest() = default;
+    IntersectionTest();
     bool runTests();
 
 private:
@@ -30,7 +30,7 @@ private:
 
     size_t simpleIntersection(std::vector<int> const&, std::vector<int> const&);
 
-    bool mAllPassed = true;
+    bool mAllPassed;
 };
 
 

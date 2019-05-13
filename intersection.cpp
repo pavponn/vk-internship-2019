@@ -8,8 +8,7 @@
 size_t intersection(std::vector<int> const& first, std::vector<int> const& second) {
     std::vector<int> const& small = first.size() < second.size() ? first : second;
     std::vector<int> const& large = first.size() >= second.size() ? first : second;
-    std::unordered_set<int> set;
-    set.insert(small.begin(), small.end());
+    std::unordered_set<int> set(small.begin(), small.end());
     size_t result = 0;
     for (auto number: large) {
         if (result == small.size()) {
