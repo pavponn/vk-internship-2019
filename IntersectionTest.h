@@ -22,7 +22,6 @@ private:
     bool randomTests();
 
     bool checkAnswer(size_t, size_t);
-
     void printRunTestMessage(std::string const&);
     void printTestsPassedMessage(size_t, size_t);
     void printResultMessage(std::string const&);
@@ -30,6 +29,8 @@ private:
     std::vector<int> getRandomVector(size_t, int);
 
     size_t simpleIntersection(std::vector<int> const&, std::vector<int> const&);
+
+    bool mAllPassed = true;
 };
 
 

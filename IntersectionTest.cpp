@@ -10,15 +10,15 @@
 
 
 bool IntersectionTest::runTests() {
-    bool allPassed = true;
-    allPassed &= emptyTests();
-    allPassed &= equalTests();
-    allPassed &= subsetTests();
-    allPassed &= distinctTests();
-    allPassed &= commonTests();
-    allPassed &= randomTests();
-    printResultMessage(allPassed ? "PASSED " : "FAILED");
-    return allPassed;
+    mAllPassed = emptyTests()
+               & equalTests()
+               & subsetTests()
+               & distinctTests()
+               & commonTests()
+               & randomTests();
+
+    printResultMessage(mAllPassed ? "PASSED " : "FAILED");
+    return mAllPassed;
 }
 
 bool IntersectionTest::emptyTests() {
@@ -46,7 +46,7 @@ bool IntersectionTest::equalTests() {
     printRunTestMessage("equalTests");
 
     testsPassed += checkAnswer(intersection(first, first), first.size()) ? 1 : 0;
-
+    
     testsPassed += checkAnswer(intersection(first, second), first.size()) ? 1 : 0;
 
     first = getRandomVector(20, 100);
@@ -155,7 +155,6 @@ bool IntersectionTest::randomTests() {
         second = getRandomVector(secondSize, static_cast<int>(secondSize * multiplierDistribution(mt)));
 
         testsPassed += checkAnswer(intersection(first, second), simpleIntersection(first, second)) ? 1 : 0;
-
     }
     printTestsPassedMessage(testsPassed, TESTS_NUM);
     return testsPassed == TESTS_NUM;

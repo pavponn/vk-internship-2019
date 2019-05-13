@@ -8,9 +8,5 @@
 
 int main() {
     IntersectionTest test;
-    if (test.runTests()) {
-        return EXIT_SUCCESS;
-    } else {
-        return EXIT_FAILURE;
-    }
+    return test.runTests() ? EXIT_SUCCESS : EXIT_FAILURE;
 }
